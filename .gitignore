@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 # User custom
-testInput.txt
+test_input.txt
 output.txt
