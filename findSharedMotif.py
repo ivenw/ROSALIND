@@ -13,15 +13,12 @@ def findSharedMotif(seq_dict) :
 
 	for chunk_size in range(shortest_seq_len, 0, -1) :
 		for pos in range(shortest_seq_len - chunk_size + 1) :
-			count = len(seq_list)
 			chunk = shortest_seq[pos:pos + chunk_size]
 			for seq in seq_list :
 				if chunk not in seq :
 					break
 				else :
-					count -= 1
-			if count == 0 :
-				return chunk
+					return chunk
 
 file = 'test_input.txt'
 
