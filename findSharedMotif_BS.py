@@ -1,5 +1,5 @@
+import math
 from fastaImport import *
-#from binarySearch import *
 
 def commonString(list_of_strings, shortest_string, substring_length) :
 
@@ -12,9 +12,10 @@ def commonString(list_of_strings, shortest_string, substring_length) :
 		for string in list_of_strings :
 			if substring not in string :
 				pass
-			else :
-				return substring
-		return None
+		else :
+			return substring
+	else :
+		return ''
 
 
 def findSharedMotif(seq_dict) :
@@ -29,9 +30,17 @@ def findSharedMotif(seq_dict) :
 
 	shortest_seq_len = len(shortest_seq)
 
-	return commonString(seq_list, shortest_seq, 7)
+	left = 0
+	right = shortest_seq_len + 1
 
+	while left + 1 < right :
+		mid = math.floor((left + right) / 2)
 
+		if commonString(seq_list, shortest_seq, mid) != '' :
+			left = mid
+		else :
+			right = mid
+	return commonString(seq_list, shortest_seq, left)
 
 file = 'test_input.txt'
 
