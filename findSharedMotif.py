@@ -17,8 +17,8 @@ def findSharedMotif(seq_dict) :
 			for seq in seq_list :
 				if chunk not in seq :
 					break
-				else :
-					return chunk
+			else :
+				return chunk
 
 file = 'test_input.txt'
 
